@@ -1,0 +1,29 @@
+{
+  "global_goal": "跨设备、跨频道可复现的记忆与编排治理",
+  "in_scope": [
+    "不可漂移通讯协议产品化（MD+JSON+PY+SH）",
+    "强执行阻断（A+B）",
+    "固定口令 + Next-ID 双层解锁"
+  ],
+  "out_of_scope": [
+    "非治理类业务功能开发",
+    "自然语言同义解锁",
+    "自动切换 Next"
+  ],
+  "next_locked": {
+    "id": "NEXT-2026-05-01-01",
+    "action": "冻结边界确认单并作为唯一上游约束"
+  },
+  "todo": {
+    "P0": [],
+    "P1": [],
+    "P2": []
+  },
+  "unlock": {
+    "phrases": ["确认解锁", "确认切阶段"],
+    "two_step_required": true
+  },
+  "owner": {
+    "lock_owner": "Bigchao"
+  }
+}

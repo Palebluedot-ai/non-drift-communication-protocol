@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/lock-state.schema.json",
+  "title": "Lock State",
+  "type": "object",
+  "required": [
+    "global_goal",
+    "in_scope",
+    "out_of_scope",
+    "next_locked",
+    "todo",
+    "unlock",
+    "owner"
+  ],
+  "properties": {
+    "global_goal": {"type": "string", "minLength": 1},
+    "in_scope": {"type": "array", "items": {"type": "string"}},
+    "out_of_scope": {"type": "array", "items": {"type": "string"}},
+    "next_locked": {
+      "type": "object",
+      "required": ["id", "action"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^NEXT-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}$"},
+        "action": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "todo": {
+      "type": "object",
+      "required": ["P0", "P1", "P2"],
+      "properties": {
+        "P0": {"type": "array", "items": {"type": "string"}},
+        "P1": {"type": "array", "items": {"type": "string"}},
+        "P2": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "unlock": {
+      "type": "object",
+      "required": ["phrases", "two_step_required"],
+      "properties": {
+        "phrases": {
+          "type": "array",
+          "items": {"type": "string"},
+          "contains": {"const": "确认解锁"},
+          "minItems": 2
+        },
+        "two_step_required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "owner": {
+      "type": "object",
+      "required": ["lock_owner"],
+      "properties": {
+        "lock_owner": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
