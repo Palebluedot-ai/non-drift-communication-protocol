@@ -50,3 +50,8 @@ Two-step required:
 
 ## Next (Locked)
 冻结本文件作为后续规划与实现的唯一上游约束。
+
+## Phase Switch Log
+- Switched by owner Bigchao via two-step unlock
+- Target Next-ID: NEXT-20260502-003
+- Current locked action is tracked in `01_protocol/lock-state.current.json`

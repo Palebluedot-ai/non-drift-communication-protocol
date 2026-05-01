@@ -1,0 +1,13 @@
+{
+  "status": "LOCKED",
+  "phase": "post-boundary-confirmation",
+  "next_locked": {
+    "id": "NEXT-20260502-003",
+    "action": "定义并冻结仓库主线路架构（为何从01开始、分层规则、命名规则）"
+  },
+  "unlock": {
+    "step_1_phrase_received": true,
+    "step_2_target_next_id_received": true,
+    "last_unlock_phrase": "确认切阶段"
+  }
+}
